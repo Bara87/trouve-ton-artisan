@@ -1,0 +1,64 @@
+<div class="container my-5" *ngIf="artisan; else noArtisan">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>{{ artisan.name }}</h2>
+      <p>{{ artisan.specialty }}</p>
+      <p>
+        <i class="bi bi-geo-alt-fill"></i>
+        {{ artisan.location }}
+      </p>
+      <p>Note: {{ artisan.note }} / 5
+        <i class="bi bi-star-fill" style="color: gold;"></i>
+      </p>
+      <p>{{ artisan.about }}</p>
+      <a *ngIf="artisan.website" [href]="artisan.website" target="_blank" class="btn btn-info">Visitez le site web</a>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="col-md-6">
+      <h3>Contactez cet artisan</h3>
+      <form (ngSubmit)="submitForm()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nom</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" required>
+          <div *ngIf="formSubmitted && !name" class="text-danger">Ce champ est requis.</div>
+        </div>
+        <div class="mb-3">
+          <label for="subject" class="form-label">Objet</label>
+          <input type="text" class="form-control" id="subject" [(ngModel)]="subject" name="subject" required>
+          <div *ngIf="formSubmitted && !subject" class="text-danger">Ce champ est requis.</div>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="3" [(ngModel)]="message" name="message" required></textarea>
+          <div *ngIf="formSubmitted && !message" class="text-danger">Ce champ est requis.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #noArtisan>
+  <div class="container my-5">
+    <h2>Aucun artisan trouvé.</h2>
+  </div>
+</ng-template>
+
+<!-- Alert Modal -->
+<div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="alertModalLabel">Erreur de validation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Veuillez remplir tous les champs requis.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>

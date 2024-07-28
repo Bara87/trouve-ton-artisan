@@ -1,0 +1,93 @@
+@import 'bootstrap/scss/bootstrap';
+
+// Définir les couleurs spécifiques
+$primary-color: #00497c;
+$secondary-color: #384050;
+$accent-color: #0074c7;
+$light-color: #f1f8fc;
+
+body {
+  font-family: 'Graphik', sans-serif;
+  background-color: $light-color;
+}
+
+header {
+  background-color: white;
+  padding: 1rem 0;
+
+  .navbar {
+    &.shadow-bottom {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .nav-link {
+      color: black !important;
+      margin: 0 10px;
+      transition: color 0.3s, background-color 0.3s;
+
+      &:hover {
+        color: #00497c !important;
+      }
+
+      &.active {
+        background-color: #0074c7 !important;
+        width: auto;
+        color: white !important;
+      }
+    }
+
+    .form-control {
+      max-width: 300px;
+      border: none;
+      border-right: 1px solid #0074c7 !important;
+      border-bottom: 1px solid #0074c7 !important;
+      transition: border 0.3s;
+
+      &:focus {
+        border: 2px solid #82b864 !important;
+        outline: none;
+      }
+    }
+
+    .logo {
+      width: 150px;
+      height: 80px;
+    }
+
+    #navbarNav {
+      margin-left: 400px;
+    }
+
+    .navbar-nav {
+      margin-right: 100px;
+    }
+
+    .bi-search {
+      font-size: 1.25rem;
+    }
+
+    // Media query for smaller devices
+    @media (max-width: 767.98px) {
+      #navbarNav {
+        margin-left: 0; // Reset margin for mobile
+      }
+
+      .navbar-nav {
+        margin-right: 0; // Reset margin for mobile
+      }
+
+      .search-form {
+        justify-content: center;
+        width: 100%; // Ensure search form takes full width
+        .form-control {
+          width: 100%; // Ensure search input takes full width
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<section class="container my-5 center-content">
+  <h1 class="title-text">Comment trouver mon artisan ?</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-3 mb-3">
+      <div class="card text-white h-100" style="background-color: #0074c7;" >
+        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+          <h2 class="card-title">1</h2>
+          <p class="card-text text-center">Choisir la catégorie d’artisanat dans le menu.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card text-white h-100" style="background-color: #0074c7;">
+        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+          <h2 class="card-title">2</h2>
+          <p class="card-text text-center">Choisir un artisan.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card text-white h-100" style="background-color: #0074c7;">
+        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+          <h2 class="card-title">3</h2>
+          <p class="card-text text-center">Le contacter via le formulaire de contact.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card text-white h-100" style="background-color: #0074c7;">
+        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+          <h2 class="card-title">4</h2>
+          <p class="card-text text-center">Une réponse sera apportée sous 48h.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container category">
+    <h1 class="text-center">Artisans du mois</h1>
+    <div class="container-fluid" style="width: 100vw; margin-left: calc(50% - 50vw); background-color: #f1f8fc ; padding: 40px;">
+    <div class="row">
+      <div *ngFor="let artisan of topArtisans" class="col-md-4">
+        <div class="card mb-4" (click)="selectArtisan(artisan)" style="cursor: pointer; border: solid #0074c7 1px;">     
+          <div class="card-body fixed-height" >
+            <h5 class="card-title">{{ artisan.name }}</h5>
+            <p class="card-text">{{ artisan.specialty }}</p>
+            <p class="card-text">
+              <i class="bi bi-geo-alt-fill"></i>
+              {{ artisan.location }}
+            </p>
+            <p class="card-text">
+              Note: {{ artisan.note }} / 5
+              <i class="bi bi-star-fill" style="color: gold;"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

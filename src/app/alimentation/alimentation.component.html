@@ -1,0 +1,23 @@
+<div class="container my-5 category">
+  <h1 class="text-center">Artisans de l'Alimentation</h1>
+  <div class="container-fluid" style="width: 100vw; margin-left: calc(50% - 50vw); background-color: #f1f8fc ; padding: 40px;">
+  <div class="row">
+    <div *ngFor="let artisan of artisans" class="col-md-4">
+      <div class="card mb-4" (click)="selectArtisan(artisan)" style="cursor: pointer; border: solid #0074c7 1px;">     
+        <div class="card-body fixed-height" >
+          <h5 class="card-title">{{ artisan.name }}</h5>
+          <p class="card-text">{{ artisan.specialty }}</p>
+          <p class="card-text">
+            <i class="bi bi-geo-alt-fill"></i>
+            {{ artisan.location }}
+          </p>
+          <p class="card-text">
+            Note: {{ artisan.note }} / 5
+            <i class="bi bi-star-fill" style="color: gold;"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

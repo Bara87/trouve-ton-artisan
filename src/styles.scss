@@ -1,0 +1,194 @@
+@import 'bootstrap/scss/bootstrap';
+
+// Définir les couleurs spécifiques
+$primary-color: #00497c;
+$secondary-color: #384050;
+$accent-color: #0074c7;
+$light-color: #f1f8fc;
+
+body {
+  font-family: 'Graphik', sans-serif;
+  background-color: $light-color;
+}
+
+header, footer {
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $primary-color;
+}
+
+// Styles pour la barre de navigation
+.navbar {
+  padding: 1rem;
+
+  .navbar-brand img {
+    height: 50px;
+  }
+
+  .nav-link {
+    color: black !important;
+    margin: 0 10px;
+    &:hover {
+      color: #00497c !important;
+    }
+    &.active {
+      background-color: #0074c7;
+      color: white !important;
+    }
+  }
+
+ 
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    .btn {
+      margin-left: -40px; /* Ajustez si nécessaire pour aligner correctement l'icône */
+    }
+  }
+}
+
+// Media queries pour rendre le site responsive
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .navbar {
+    padding: 0.5rem;
+    .form-control {
+      width: 100%; /* Assurez-vous que la barre de recherche prend toute la largeur disponible */
+      margin-right: 0;
+    }
+
+    .search-form {
+      width: 100%; /* Assurez-vous que le formulaire de recherche prend toute la largeur disponible */
+      justify-content: center; /* Centrer la barre de recherche */
+    }
+  }
+
+  footer {
+    .row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .col-md-3 {
+      margin-bottom: 1rem;
+      text-align: left;
+
+      h3 {
+        text-align: left; // Assurez-vous que les titres restent alignés à gauche
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .search-form {
+    justify-content: center;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .navbar {
+    padding: 1rem;
+    .form-control {
+      width: auto; /* Permettre à la barre de recherche de revenir à sa taille normale */
+    }
+
+    .search-form {
+      width: auto; /* Permettre au formulaire de recherche de revenir à sa taille normale */
+    }
+  }
+
+  footer {
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .col-md-3 {
+      margin-bottom: 0;
+      text-align: left;
+
+      h3 {
+        text-align: left; // Assurez-vous que les titres restent alignés à gauche
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      margin-bottom: 0;
+    }
+  }
+
+  .search-form {
+    justify-content: flex-start;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .navbar {
+    padding: 1rem;
+    .form-control {
+      width: auto; /* Permettre à la barre de recherche de revenir à sa taille normale */
+    }
+
+    .search-form {
+      width: auto; /* Permettre au formulaire de recherche de revenir à sa taille normale */
+    }
+  }
+
+  footer {
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .col-md-3 {
+      margin-bottom: 0;
+      text-align: left;
+
+      h3 {
+        text-align: left; // Assurez-vous que les titres restent alignés à gauche
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 2rem;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      margin-bottom: 0;
+    }
+  }
+
+  .search-form {
+    justify-content: flex-start;
+  }
+}
